@@ -18,12 +18,13 @@ app = FastAPI(
 # Allow your frontend origin. In production, replace "*" with your domain.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "https://prompt-wars-savanna-frontend.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 # ── Startup ───────────────────────────────────────────────────────────────────
 
 @app.on_event("startup")
