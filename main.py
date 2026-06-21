@@ -40,7 +40,10 @@ app.include_router(habits_router)
 app.include_router(community_router)
 app.include_router(twin_router)
 
-
+@app.get("/cors-test")
+def cors_test():
+    return {"cors": "enabled"}
+    
 @app.get("/", tags=["Health"])
 def root():
     return {"status": "ok", "service": "SAVANNA API", "version": "1.0.0"}
